@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const API = "https://task-manager-mern-2i7g.onrender.com";
+const API = "https://task-manger-ykjf.onrender.com";
 const Tasks = () => {
   const [tasks, setTasks] = useState([]);
   const location = useLocation();
@@ -16,7 +16,7 @@ const Tasks = () => {
       const status = params.get("status");
       const priority = params.get("priority");
 
-      let endpoint = "/api/task/get-all";
+      let endpoint = {`${API}/api/task/get-all`};
 
       if (search || status || priority) {
         const queryParams = new URLSearchParams();
@@ -24,7 +24,7 @@ const Tasks = () => {
         if (status) queryParams.set("status", status);
         if (priority) queryParams.set("priority", priority);
 
-        endpoint = `/api/task/search?${queryParams.toString()}`;
+        endpoint = `${API}/api/task/search?${queryParams.toString()}`;
       }
 
       const { data } = await axios.get(endpoint);
@@ -42,7 +42,7 @@ const Tasks = () => {
 
   const deleteTask = async (id) => {
     try {
-      const { data } = await axios.delete(`/api/task/delete/${id}`);
+      const { data } = await axios.delete(`${API}/api/task/delete/${id}`);
       if (data && data.success) {
         toast.success(data.message);
       } else {
