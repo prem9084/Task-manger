@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+.active li {
+  @apply bg-blue-500;
+}
+
+.home {
+  display: flex !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
+
+@media screen and (max-width: 740px) {
+  .home {
+    display: flex !important;
+    justify-content: flex-end !important;
+    flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .card {
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: column;
+    width: 13.8rem !important;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 741px) and (max-width: 1024px) {
+  .card {
+    display: flex !important;
+    justify-content: center;
+    margin-top: 5rem !important;
+    margin: auto;
+  }
+}
+
+.add {
+  border: 2px dotted #000;
+  width: 19rem;
+  height: 18rem;
+  text-align: center;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+}
+
+.add p {
+  margin-top: 8rem;
+}
+
+@media screen and (max-width: 740px) {
+  .add {
+    border: 2px dotted #000;
+    width: 13rem;
+    height: 13rem;
+    text-align: center;
+    border-radius: 1rem;
+    margin-top: 1rem;
+  }
+  .add p {
+    margin-top: 7rem;
+  }
+}
