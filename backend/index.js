@@ -15,9 +15,12 @@ connectDb();
 
 app.use(express.json());
 app.use(morgan("dev"));
+
 app.use(
-   origin: ["http://localhost:5173", "https://task-handlers.netlify.app"],
+  cors({
+    origin: ["http://localhost:5173", "https://task-handlers.netlify.app"],
     credentials: true,
+  })
 );
 
 app.use("/api/user", UserRoute);
