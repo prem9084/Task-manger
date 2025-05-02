@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-const API = "https://task-manager-mern-2i7g.onrender.com";
+const API = "https://task-manger-ykjf.onrender.com";
 const UpdateTask = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -14,7 +14,7 @@ const UpdateTask = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.put(`/api/task/update/${params.id}`, {
+      const { data } = await axios.put(`${API}/api/task/update/${params.id}`, {
         title,
         description,
         dueDate,
@@ -36,7 +36,7 @@ const UpdateTask = () => {
 
   const GetSingleTask = async () => {
     try {
-      const { data } = await axios.get(`/api/task/get-single/${params.id}`);
+      const { data } = await axios.get(`${API}/api/task/get-single/${params.id}`);
       setTitle(data.tasks.title);
       setDescription(data.tasks.description);
       setDueDate(data.tasks.dueDate?.split("T")[0] || "");
