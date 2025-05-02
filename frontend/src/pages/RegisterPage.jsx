@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-const API = "https://task-manager-mern-2i7g.onrender.com";
+const API = "https://task-manger-ykjf.onrender.com";
 const RegisterPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,7 +12,7 @@ const RegisterPage = () => {
   const handleSubmmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/api/user/register", {
+      const { data } = await axios.post(`${API}/api/user/register`, {
         password,
         email,
         username,
