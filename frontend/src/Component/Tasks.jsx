@@ -24,7 +24,7 @@ const Tasks = () => {
         if (status) queryParams.set("status", status);
         if (priority) queryParams.set("priority", priority);
 
-        endpoint = `${API}/api/task/search?${queryParams.toString()}`;
+        endpoint = {`${API}/api/task/search?${queryParams.toString()}`;
       }
 
       const { data } = await axios.get(endpoint);
