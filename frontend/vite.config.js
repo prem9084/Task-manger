@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://taskhandlers.vercel.app",
+        target: "https://task-manger-ykjf.onrender.com",
         changeOrigin: true,
         secure: false,
       },
