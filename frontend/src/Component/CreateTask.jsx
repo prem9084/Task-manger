@@ -10,11 +10,11 @@ const CreateTask = () => {
   const [priority, setPriority] = useState("");
   const [status, setStatus] = useState("");
   const navigate = useNavigate();
-  const API = "https://task-manager-mern-2i7g.onrender.com";
+  const API = "https://task-manger-ykjf.onrender.com";
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/api/task/create", {
+      const { data } = await axios.post(`${API}/api/task/create`, {
         title,
         description,
         dueDate,
